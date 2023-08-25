@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mental Health Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .chat-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .chat-history {
+            height: 400px;
+            overflow-y: scroll;
+        }
+
+        .chatbot-message,
+        .user-message {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .chatbot-message .chatbot-image,
+        .user-message .user-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .chatbot-text,
+        .user-text {
+            padding: 10px;
+            background-color: #e1f7e7;
+            border-radius: 10px;
+            word-wrap: break-word;
+        }
+
+        .user-input {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #send-btn {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">Mental Health Chatbot</div>
+        <div class="chat-history" id="chat-history">
+            <!-- Chatbot's welcome message -->
+            <div class="chatbot-message">
+                <img src="{{ url_for('static', filename='chatbot.jfif') }}"  alt="Chatbot" class="chatbot-image">
+                <div class="chatbot-text">
+                    <p>Hello there! I'm your Mental Health Chatbot.</p>
+                    <p>Feel free to share your thoughts and feelings with me.</p>
+                </div>
+            </div>
+        </div>
+        <div class="user-input">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
